@@ -1,7 +1,6 @@
 pipeline{
 	tools {
 		jdk 'Java'
-		gradle 'gradle'
 		maven 'maven'
 		}
 	agent any
@@ -19,12 +18,12 @@ pipeline{
 		stage("Build with gradle"){
 			steps{
 				echo "Running build automation"
-				sh '/usr/bin/gradle build --no-daemon'
+				sh './gradlew build --no-daemon'
 			}
 		}
 		stage("Test build "){
 			steps{
-				 sh '/usr/bin/gradle test'
+				 sh './gradlew test'
 			}
 		}
 		stage("Archive a build"){
