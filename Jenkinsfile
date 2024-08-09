@@ -1,10 +1,15 @@
 pipeline{
+	agent any
 	tools {
 		jdk 'java_1.8'
 		maven 'maven'
 		gradle 'gradle'
 		}
-	agent any
+	options {
+		buildDiscarder logRotator(artifactDaysToKeepStr: '', 
+		artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '2')
+		}
+
 	stages{
 		stage("Checkout"){
 			steps{
