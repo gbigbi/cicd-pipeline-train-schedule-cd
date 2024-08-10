@@ -1,7 +1,6 @@
 pipeline{
 	agent any
 	tools {
-		jdk 'java_1.8'
 		maven 'maven'
 		gradle 'gradle'
 		}
