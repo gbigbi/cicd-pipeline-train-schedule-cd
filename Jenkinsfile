@@ -12,11 +12,6 @@ pipeline{
 				sh './gradlew build --no-daemon'
 			}
 		}
-		stage("Test build "){
-			steps{
-				 sh './gradlew test'
-			}
-		}
 		stage("Archive a build"){
 			steps{
 				archiveArtifacts artifacts: 'dist/trainSchedule.zip', fingerprint: true
