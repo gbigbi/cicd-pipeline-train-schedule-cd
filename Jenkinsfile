@@ -29,7 +29,7 @@ pipeline{
 		}
 		stage("Archive a build"){
 			steps{
-				archiveArtifacts artifacts: 'dist/trainSchedule.zip', fingerprint: true, followSymlinks: false
+				archiveArtifacts artifacts: 'dist/trainSchedule.zip', fingerprint: true
 			}
 		}
 	}
